@@ -1,0 +1,17 @@
+void setup() {
+    Serial.begin(9600); // Initialize serial communication
+    pinMode(LED_BUILTIN, OUTPUT); // Use built-in LED (pin 13) for testing
+}
+
+void loop() {
+    if (Serial.available() > 0) { // Check if data is available
+        String command = Serial.readStringUntil('\n'); // Read the incoming data
+
+        if (command == "TURN_ON") {
+            digitalWrite(LED_BUILTIN, HIGH); // Turn LED ON
+        } 
+        else if (command == "TURN_OFF") {
+            digitalWrite(LED_BUILTIN, LOW); // Turn LED OFF
+        }
+    }
+}
