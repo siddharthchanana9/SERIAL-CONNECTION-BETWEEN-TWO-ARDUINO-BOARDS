@@ -1,0 +1,10 @@
+void setup() {
+    Serial.begin(9600); // Initialize serial communication at 9600 baud rate
+}
+
+void loop() {
+    Serial.println("TURN_ON"); // Send command
+    delay(2000); // Wait for 2 seconds
+    Serial.println("TURN_OFF"); // Send another command
+    delay(2000); // Wait for 2 seconds
+}
